@@ -69,7 +69,7 @@ df.to_csv(path_or_buf=os.path.join(DATA_DIR, "contraceptive.csv"), index=False)
 # labels = ['sex', 'length', 'diameter', 'height', 'whole', 'shucked', 'viscera', 'shell', 'class']
 #
 # df = pd.read_csv(
-#     os.path.join(RAW_DATA_DIR, 'abalone.data'),
+#     os.DATA_DIR.join(RAW_DATA_DIR, 'abalone.data'),
 #     header=None,
 #     names=labels)
 # df = pd.get_dummies(df, drop_first=True)
@@ -78,7 +78,7 @@ df.to_csv(path_or_buf=os.path.join(DATA_DIR, "contraceptive.csv"), index=False)
 # cols += ['class']
 # df = df[cols]
 #
-# df.to_csv(path_or_buf=os.path.join(DATA_DIR, "abalone.csv"), index=False)
+# df.to_csv(path_or_buf=os.DATA_DIR.join(DATA_DIR, "abalone.csv"), index=False)
 
 ## Pima Indians Diabetes Database ##
 """
