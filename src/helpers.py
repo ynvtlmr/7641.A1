@@ -7,7 +7,7 @@ def save_dataset(df, filename, sep=',', subdir='data', header=True):
 
     Args:
         df (Pandas.DataFrame): Data frame.
-        filename (str): Output file name.
+        filename (str): Output file clf_name.
         sep (str): Delimiter.
         subdir (str): Project directory to save output file.
         header (Boolean): Specify inclusion of header.

@@ -1,6 +1,9 @@
 import os
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
+
+matplotlib.use('agg')
 
 DATA_DIR = '../data/'
 DATA_PLOTS_DIR = '../plots/data/'
@@ -34,4 +37,4 @@ for filename in os.listdir(DATA_DIR):
 
         # save the plot
         plt.savefig(os.path.join(data_plots_dir, c))
-        plt.show()
+        plt.close()

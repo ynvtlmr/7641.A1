@@ -1,6 +1,9 @@
 import os
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
+
+matplotlib.use('agg')
 
 DATA_DIR = '../data/'
 DATA_PLOTS_DIR = '../plots/data/'
@@ -24,4 +27,4 @@ for filename in os.listdir(DATA_DIR):
     for i in range(count_unique_classes):
         df.loc[df['class'] == i].groupby('class').hist()
         plt.savefig(os.path.join(data_plots_dir, 'histogram_' + str(i)))
-        plt.show()
+        plt.close()

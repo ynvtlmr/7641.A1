@@ -14,6 +14,7 @@ from clf_neural_network import MLP
 from clf_svm import SVM_RBF, SVM_PLY
 import pandas as pd
 import timeit
+import os
 
 """ Filter Warnings """
 import warnings
@@ -153,7 +154,13 @@ if __name__ == '__main__':
     # set scoring function
     scorer = make_scorer(balanced_accuracy)
 
-    dnames = ['abalone', 'banknotes', 'bike_sharing_day', 'contraceptive', 'diabetes']
+    # get data names
+    DATA_DIR = '../data/'
+    data_files = os.listdir(DATA_DIR)
+    dnames = [x.split('.')[0] for x in data_files]
+    # dnames = ['abalone', 'banana', 'banknotes', 'bike_sharing_day', 'contraceptive', 'diabetes']
+
+    # load data-frames from CSV files
     dfs = {}
     for d in dnames:
         path = get_abspath('{}.csv'.format(d), 'data')
