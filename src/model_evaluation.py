@@ -336,23 +336,19 @@ def create_decision_boundary(X, y, clf, data_name, clf_name):
     plt.close()
 
 
-def create_decision_tree(dtree, X_train, y_train, data_name, clf_name):
+def create_decision_tree(dtree, data_name, clf_name):
     """Creates a tree chart for a decision tree classifier.
 
     Args:
         dtree (object): Decision Tree classifier.
-        X_train (numpy.Array): Training features.
-        y_train (numpy.Array): Training labels.
         data_name (str): Name of data set being tested.
         clf_name (str): Type of algorithm.
 
     Returns:
 
     """
-    dtree.fit(X_train, y_train)
-
     dot_data = StringIO()
-    export_graphviz(dtree, out_file=dot_data,
+    export_graphviz(dtree.named_steps['DT'], out_file=dot_data,
                     filled=True, rounded=True,
                     special_characters=True)
     graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
@@ -363,8 +359,6 @@ def create_decision_tree(dtree, X_train, y_train, data_name, clf_name):
     plot_tgt = '{}/{}'.format(plotdir, clf_name)
     plotpath = get_abspath('{}_DT.png'.format(data_name), plot_tgt)
     graph.write_png(plotpath)
-    # plt.savefig(plotpath)
-    # plt.close()
 
 
 if __name__ == '__main__':
@@ -488,14 +482,12 @@ if __name__ == '__main__':
                     clf_name=clf_name
                 )
 
-            # if clf_name == 'DT':
-            #     create_decision_tree(
-            #         dtree=estimator.best_estimator_,
-            #         X_train=X_train,
-            #         y_train=y_train,
-            #         data_name=df_name,
-            #         clf_name=clf_name
-            #     )
+            if clf_name == 'DT':
+                create_decision_tree(
+                    dtree=estimator.best_estimator_,
+                    data_name=df_name,
+                    clf_name=clf_name
+                )
 
             # generate iteration curves for ANN and AdaBoost classifiers
             if clf_name == 'ANN' or clf_name == 'Boosting':
