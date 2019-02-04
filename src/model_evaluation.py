@@ -389,15 +389,19 @@ if __name__ == '__main__':
         'ANN': None,
         'SVM_RBF': None,
         'SVM_PLY': None,
-        'Boosting': None
+        'SVM_LIN': None,
+        'Boosting': None,
     }
 
-    mnames = ['DT',
-              'SVM_RBF',
-              'SVM_PLY',
-              'Boosting',
-              'ANN',
-              'KNN']
+    mnames = [
+        'DT',
+        'SVM_RBF',
+        'SVM_PLY',
+        'SVM_LIN',
+        'Boosting',
+        'ANN',
+        'KNN'
+    ]
 
     # estimators with iteration param
     iterators = {
@@ -462,15 +466,16 @@ if __name__ == '__main__':
                 clf_name=clf_name
             )
 
-            create_validation_curve(
-                estimator.best_estimator_,
-                X_train, y_train,
-                data_name=df_name,
-                clf_name=clf_name,
-                param_name=vc_params[clf_name][0],
-                param_range=vc_params[clf_name][1],
-                scorer=scorer
-            )
+            if clf_name != 'SVM_LIN':
+                create_validation_curve(
+                    estimator.best_estimator_,
+                    X_train, y_train,
+                    data_name=df_name,
+                    clf_name=clf_name,
+                    param_name=vc_params[clf_name][0],
+                    param_range=vc_params[clf_name][1],
+                    scorer=scorer
+                )
 
             # two attributes and a class, draw decision boundary plot
             if len(df.columns) == 3:

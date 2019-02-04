@@ -11,7 +11,7 @@ from clf_knn import KNN
 from clf_decision_tree import DT
 from clf_boosting import ADA
 from clf_neural_network import MLP
-from clf_svm import SVM_RBF, SVM_PLY
+from clf_svm import SVM_RBF, SVM_PLY, SVM_LIN
 import pandas as pd
 import timeit
 import os
@@ -170,10 +170,11 @@ if __name__ == '__main__':
     estimators = {
         'DT': DT,
         'Boosting': ADA,
+        'KNN': KNN,
         'ANN': MLP,
         'SVM_RBF': SVM_RBF,
-        'KNN': KNN,
         'SVM_PLY': SVM_PLY,
+        'SVM_LIN': SVM_LIN,
     }
 
     # begin training loop

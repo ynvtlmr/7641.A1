@@ -46,3 +46,23 @@ class SVM_PLY(object):
                        'SVMP__coef0': [0, 1],
                        'SVMP__class_weight': ['balanced']
                        }
+
+
+class SVM_LIN(object):
+
+    def __init__(self):
+        """ Construct the SVM classifier object
+
+        """
+        # set up model pipeline, scaling training data to have zero mean and
+        # unit variance
+        self.pipeline = Pipeline(
+            [('Scale', StandardScaler()), ('SVML', SVC())])
+
+        # set up parameter grid for parameters to search over
+        self.params = {'SVML__kernel': ['linear'],
+                       'SVML__C': np.linspace(0.1, 1.0, num=10),
+                       'SVML__cache_size': [8000],
+                       'SVML__max_iter': [40000],
+                       'SVML__class_weight': ['balanced']
+                       }
