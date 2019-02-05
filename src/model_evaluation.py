@@ -88,6 +88,10 @@ def create_learning_curve(
     train_scores = pd.DataFrame(index=LC[0], data=LC[1])
     test_scores = pd.DataFrame(index=LC[0], data=LC[2])
 
+    train_scores_mean = np.mean(train_scores, axis=1)
+    test_scores_mean = np.mean(test_scores, axis=1)
+    test_scores_std = np.std(test_scores, axis=1)
+
     # save data frames to CSV
     resdir = 'results'
     res_tgt = '{}/{}'.format(resdir, clf_name)
@@ -98,15 +102,22 @@ def create_learning_curve(
 
     # create learning curve plot
     plt.figure(1)
-    plt.plot(train_sizes, np.mean(train_scores, axis=1),
-             marker='.', color='black', label='Training score')
-    plt.plot(train_sizes, np.mean(test_scores, axis=1),
-             marker='.', color='blue', label='Cross-validation score')
+    plt.plot(train_sizes, 1 - train_scores_mean,
+             marker='.', color='b', label='Training score')
+    plt.plot(train_sizes, 1 - test_scores_mean,
+             marker='.', color='g', label='Cross-validation score')
+
+    # plot upper and lower bound filler
+    plt.fill_between(train_sizes,
+                     1 - test_scores_mean - test_scores_std,
+                     1 - test_scores_mean + test_scores_std,
+                     alpha=0.2, color="g")
+
     plt.legend(loc='best')
     plt.grid(linestyle='dotted')
     plt.xlabel('Samples used for training as a percentage of total')
-    plt.ylabel('Balanced Accuracy')
-    plt.ylim((0, 1.1))
+    plt.ylabel('Balanced Error')
+    # plt.ylim((0, 1.1))
 
     plt.title("Learning with {} on {}".format(clf_name, data_name))
 
@@ -238,7 +249,7 @@ def create_iteration_curve(
     plt.grid(linestyle='dotted')
     plt.xlabel('Number of iterations')
     plt.ylabel('Balanced Accuracy')
-    plt.ylim((0, 1.1))
+    # plt.ylim((0, 1.1))
 
     plt.title("Interation with {} on {}".format(clf_name, data_name))
     # save iteration curve plot as PNG
@@ -275,25 +286,35 @@ def create_validation_curve(
         cv=5, scoring=scorer, n_jobs=1
     )
 
+    train_scores_mean = np.mean(train_scores, axis=1)
+    test_scores_mean = np.mean(test_scores, axis=1)
+    test_scores_std = np.std(test_scores, axis=1)
+
     # generate validation curve plot
     plt.figure(4)
-    if param_name is 'SVMR__gamma' or param_name is 'MLP__alpha':
-        plt.semilogx(param_range, np.mean(train_scores, axis=1),
+    if param_name is 'SVMR__gamma' or param_name is 'MLP__alpha' or param_name is 'SVMS__gamma':
+        plt.semilogx(param_range, 1 - train_scores_mean,
                      marker='.', color='b', label='Train Score')
-        plt.semilogx(param_range, np.mean(test_scores, axis=1),
+        plt.semilogx(param_range, 1 - test_scores_mean,
                      marker='.', color='g', label='Cross-validation Score')
     else:
-        plt.plot(param_range, np.mean(train_scores, axis=1),
+        plt.plot(param_range, 1 - train_scores_mean,
                  marker='.', color='b', label='Train Score')
-        plt.plot(param_range, np.mean(test_scores, axis=1),
+        plt.plot(param_range, 1 - test_scores_mean,
                  marker='.', color='g', label='Cross-validation Score')
+
+    # plot upper and lower bound filler
+    plt.fill_between(param_range,
+                     1 - test_scores_mean - test_scores_std,
+                     1 - test_scores_mean + test_scores_std,
+                     alpha=0.2, color="g")
 
     plt.legend(loc='best')
     plt.title("Validation Curve with {} on {}".format(clf_name, data_name))
     plt.grid(linestyle='dotted')
     plt.xlabel(param_name)
-    plt.ylabel('Balanced Accuracy')
-    plt.ylim((0, 1.1))
+    plt.ylabel('Balanced Error')
+    # plt.ylim((0, 1.1))
 
     # save iteration curve plot as PNG
     plotdir = 'plots'
@@ -390,6 +411,7 @@ if __name__ == '__main__':
         'SVM_RBF': None,
         'SVM_PLY': None,
         'SVM_LIN': None,
+        'SVM_SIG': None,
         'Boosting': None,
     }
 
@@ -398,6 +420,7 @@ if __name__ == '__main__':
         'SVM_RBF',
         'SVM_PLY',
         'SVM_LIN',
+        'SVM_SIG',
         'Boosting',
         'ANN',
         'KNN'
@@ -416,6 +439,8 @@ if __name__ == '__main__':
         'ANN': ('MLP__alpha', np.logspace(-10, 4, 20)),
         'SVM_RBF': ('SVMR__gamma', np.logspace(-9, 1, 15)),
         'SVM_PLY': ('SVMP__degree', np.arange(0.001, 10, 0.5)),
+        'SVM_SIG': ('SVMS__gamma', np.logspace(-9, 1, 15)),
+        'SVM_LIN': ('SVML__max_iter', np.linspace(1, 40000, 20)),
         'Boosting': ('ADA__learning_rate', np.arange(0.001, 10.0, 0.1)),
     }
 
@@ -466,16 +491,15 @@ if __name__ == '__main__':
                 clf_name=clf_name
             )
 
-            if clf_name != 'SVM_LIN':
-                create_validation_curve(
-                    estimator.best_estimator_,
-                    X_train, y_train,
-                    data_name=df_name,
-                    clf_name=clf_name,
-                    param_name=vc_params[clf_name][0],
-                    param_range=vc_params[clf_name][1],
-                    scorer=scorer
-                )
+            create_validation_curve(
+                estimator.best_estimator_,
+                X_train, y_train,
+                data_name=df_name,
+                clf_name=clf_name,
+                param_name=vc_params[clf_name][0],
+                param_range=vc_params[clf_name][1],
+                scorer=scorer
+            )
 
             # two attributes and a class, draw decision boundary plot
             if len(df.columns) == 3:

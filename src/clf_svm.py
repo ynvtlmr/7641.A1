@@ -66,3 +66,25 @@ class SVM_LIN(object):
                        'SVML__max_iter': [40000],
                        'SVML__class_weight': ['balanced']
                        }
+
+
+class SVM_SIG(object):
+
+    def __init__(self):
+        """ Construct the SVM classifier object
+
+        """
+        # set up model pipeline, scaling training data to have zero mean and
+        # unit variance
+        self.pipeline = Pipeline(
+            [('Scale', StandardScaler()), ('SVMS', SVC())])
+
+        # set up parameter grid for parameters to search over
+        self.params = {'SVMS__kernel': ['sigmoid'],
+                       'SVMS__C': np.linspace(0.1, 1.0, num=10),
+                       'SVMS__cache_size': [8000],
+                       'SVMS__max_iter': [40000],
+                       'SVMS__class_weight': ['balanced'],
+                       'SVMS__gamma': np.logspace(-9, 1, 10),
+                       'SVMS__coef0': [0, 1],
+                       }

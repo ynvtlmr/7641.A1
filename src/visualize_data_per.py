@@ -30,10 +30,11 @@ for filename in os.listdir(DATA_DIR):
         plt.legend(range(count_unique_classes))
 
         if c == 'class':
-            df.groupby('class')[c].hist(alpha=0.5, bins=2)
+            df.groupby('class')[c].hist(bins=2)
         else:
             df.groupby('class')[c].plot(kind='kde')
-            # df[c].plot(kind='hist')
+            # df.groupby('class')[c].plot(kind='hist')
+            # df.groupby('class')[c].plot(kind='hist', alpha=0.5)
 
         # save the plot
         plt.savefig(os.path.join(data_plots_dir, c))

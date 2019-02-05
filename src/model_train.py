@@ -11,7 +11,7 @@ from clf_knn import KNN
 from clf_decision_tree import DT
 from clf_boosting import ADA
 from clf_neural_network import MLP
-from clf_svm import SVM_RBF, SVM_PLY, SVM_LIN
+from clf_svm import SVM_RBF, SVM_PLY, SVM_LIN, SVM_SIG
 import pandas as pd
 import timeit
 import os
@@ -175,6 +175,7 @@ if __name__ == '__main__':
         'SVM_RBF': SVM_RBF,
         'SVM_PLY': SVM_PLY,
         'SVM_LIN': SVM_LIN,
+        'SVM_SIG': SVM_SIG,
     }
 
     # begin training loop
@@ -191,7 +192,7 @@ if __name__ == '__main__':
             start_time = timeit.default_timer()
 
             # run grid search
-            grid = train_model(X_train, y_train, clf=clf, scorer=scorer, cv=4)
+            grid = train_model(X_train, y_train, clf=clf, scorer=scorer, cv=5)
 
             # end timing
             end_time = timeit.default_timer()
