@@ -396,7 +396,6 @@ if __name__ == '__main__':
     DATA_DIR = '../data/'
     data_files = os.listdir(DATA_DIR)
     dnames = [x.split('.')[0] for x in data_files]
-    # dnames = ['abalone', 'banana', 'banknotes', 'bike_sharing_day', 'contraceptive', 'diabetes']
 
     dfs = {}
     for d in dnames:
@@ -407,23 +406,23 @@ if __name__ == '__main__':
     estimators = {
         'KNN': None,
         'DT': None,
+        'Boosting': None,
         'ANN': None,
-        'SVM_RBF': None,
-        'SVM_PLY': None,
         'SVM_LIN': None,
         'SVM_SIG': None,
-        'Boosting': None,
+        'SVM_PLY': None,
+        'SVM_RBF': None,
     }
 
     mnames = [
+        'KNN',
         'DT',
-        'SVM_RBF',
-        'SVM_PLY',
-        'SVM_LIN',
-        'SVM_SIG',
         'Boosting',
         'ANN',
-        'KNN'
+        'SVM_LIN',
+        'SVM_SIG',
+        'SVM_PLY',
+        'SVM_RBF',
     ]
 
     # estimators with iteration param
@@ -434,14 +433,14 @@ if __name__ == '__main__':
 
     # validation curve parameter names and ranges
     vc_params = {
-        'KNN': ('KNN__n_neighbors', np.arange(1, 40, 1)),
+        'KNN': ('KNN__n_neighbors', np.arange(1, 30, 1)),
         'DT': ('DT__max_depth', np.arange(1, 50, 1)),
-        'ANN': ('MLP__alpha', np.logspace(-10, 4, 20)),
-        'SVM_RBF': ('SVMR__gamma', np.logspace(-9, 1, 15)),
-        'SVM_PLY': ('SVMP__degree', np.arange(0.001, 10, 0.5)),
-        'SVM_SIG': ('SVMS__gamma', np.logspace(-9, 1, 15)),
-        'SVM_LIN': ('SVML__max_iter', np.linspace(1, 40000, 20)),
         'Boosting': ('ADA__learning_rate', np.arange(0.001, 10.0, 0.1)),
+        'ANN': ('MLP__alpha', np.logspace(-10, 4, 20)),
+        'SVM_LIN': ('SVML__max_iter', np.linspace(1, 40000, 20)),
+        'SVM_SIG': ('SVMS__gamma', np.logspace(-9, 1, 15)),
+        'SVM_PLY': ('SVMP__degree', np.arange(0.001, 10, 0.5)),
+        'SVM_RBF': ('SVMR__gamma', np.logspace(-9, 1, 15)),
     }
 
     # start model evaluation loop

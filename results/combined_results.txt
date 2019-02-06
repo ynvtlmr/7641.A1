@@ -1,3 +1,5 @@
+clf_name | data_name | grid.best_score_ | grid.score(X_test, y_test) | grid.scorer_ | grid.best_params_
+
 KNN|banknotes|0.9990601503759399|1.0|make_scorer(balanced_accuracy)|{'KNN__leaf_size': 1, 'KNN__metric': 'manhattan', 'KNN__n_neighbors': 9, 'KNN__weights': 'distance'}
 DT|banknotes|0.9906151390062486|0.9830696542343761|make_scorer(balanced_accuracy)|{'DT__class_weight': 'balanced', 'DT__criterion': 'gini', 'DT__max_depth': 26, 'DT__max_features': 0.8500000000000002, 'DT__min_samples_leaf': 1}
 ANN|banknotes|0.9962406015037594|0.9868995633187773|make_scorer(balanced_accuracy)|{'MLP__activation': 'relu', 'MLP__alpha': 0.01, 'MLP__hidden_layer_sizes': (500, 500), 'MLP__learning_rate': 'adaptive', 'MLP__solver': 'adam'}
@@ -69,3 +71,15 @@ SVM_PLY|banana|0.7687664703948824|0.7665548271952229|make_scorer(balanced_accura
 SVM_LIN|banana|0.4814630525095312|0.4593123951504956|make_scorer(balanced_accuracy)|{'SVML__C': 0.8, 'SVML__cache_size': 8000, 'SVML__class_weight': 'balanced', 'SVML__kernel': 'linear', 'SVML__max_iter': 40000}
 SVM_SIG|banana|0.5672603893685755|0.5295825530424548|make_scorer(balanced_accuracy)|{'SVMS__C': 0.4, 'SVMS__cache_size': 8000, 'SVMS__class_weight': 'balanced', 'SVMS__coef0': 1, 'SVMS__gamma': 0.05994842503189421, 'SVMS__kernel': 'sigmoid', 'SVMS__max_iter': 40000}
 Boosting|banana|0.8909201098624502|0.8925821324450146|make_scorer(balanced_accuracy)|{'ADA__base_estimator__class_weight': 'balanced', 'ADA__base_estimator__criterion': 'entropy', 'ADA__base_estimator__max_depth': 5, 'ADA__learning_rate': 0.071, 'ADA__n_estimators': 30}
+
+KNN|banknotes|0.9990615172955974|1.0|make_scorer(balanced_accuracy)|{'KNN__algorithm': 'ball_tree', 'KNN__leaf_size': 1, 'KNN__metric': 'manhattan', 'KNN__n_neighbors': 11, 'KNN__weights': 'distance'}
+KNN|banana|0.8968612809187861|0.9038591014567386|make_scorer(balanced_accuracy)|{'KNN__algorithm': 'ball_tree', 'KNN__leaf_size': 1, 'KNN__metric': 'manhattan', 'KNN__n_neighbors': 19, 'KNN__weights': 'uniform'}
+
+KNN|banknotes|0.9990615172955974|1.0|make_scorer(balanced_accuracy)|{'KNN__algorithm': 'ball_tree', 'KNN__leaf_size': 3, 'KNN__metric': 'manhattan', 'KNN__n_neighbors': 11, 'KNN__weights': 'distance'}
+KNN|banana|0.8968612809187861|0.9038591014567386|make_scorer(balanced_accuracy)|{'KNN__algorithm': 'ball_tree', 'KNN__leaf_size': 3, 'KNN__metric': 'manhattan', 'KNN__n_neighbors': 19, 'KNN__weights': 'uniform'}
+
+KNN|banknotes|0.9990615172955974|1.0|make_scorer(balanced_accuracy)|{'KNN__algorithm': 'brute', 'KNN__metric': 'manhattan', 'KNN__n_neighbors': 11, 'KNN__weights': 'distance'}
+KNN|banana|0.8968612809187861|0.9038591014567386|make_scorer(balanced_accuracy)|{'KNN__algorithm': 'brute', 'KNN__metric': 'manhattan', 'KNN__n_neighbors': 19, 'KNN__weights': 'uniform'}
+
+KNN|banknotes|0.9990615172955974|1.0|make_scorer(balanced_accuracy)|{'KNN__algorithm': 'ball_tree', 'KNN__leaf_size': 1, 'KNN__metric': 'minkowski', 'KNN__n_neighbors': 11, 'KNN__weights': 'distance'}
+KNN|banana|0.8968612809187861|0.9038591014567386|make_scorer(balanced_accuracy)|{'KNN__algorithm': 'ball_tree', 'KNN__leaf_size': 1, 'KNN__metric': 'manhattan', 'KNN__n_neighbors': 19, 'KNN__weights': 'uniform'}

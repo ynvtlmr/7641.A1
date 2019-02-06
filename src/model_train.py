@@ -158,7 +158,6 @@ if __name__ == '__main__':
     DATA_DIR = '../data/'
     data_files = os.listdir(DATA_DIR)
     dnames = [x.split('.')[0] for x in data_files]
-    # dnames = ['abalone', 'banana', 'banknotes', 'bike_sharing_day', 'contraceptive', 'diabetes']
 
     # load data-frames from CSV files
     dfs = {}
@@ -168,14 +167,14 @@ if __name__ == '__main__':
 
     # instantiate estimators
     estimators = {
+        'KNN': KNN,
         'DT': DT,
         'Boosting': ADA,
-        'KNN': KNN,
         'ANN': MLP,
-        'SVM_RBF': SVM_RBF,
-        'SVM_PLY': SVM_PLY,
         'SVM_LIN': SVM_LIN,
         'SVM_SIG': SVM_SIG,
+        'SVM_PLY': SVM_PLY,
+        'SVM_RBF': SVM_RBF,
     }
 
     # begin training loop
