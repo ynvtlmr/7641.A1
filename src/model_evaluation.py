@@ -302,6 +302,7 @@ def create_iteration_curve(
     for i, iteration in enumerate(iterations):
         estimator.set_params(**{param: iteration})
         estimator.fit(X_train, y_train)
+
         train_iter.append(np.mean(cross_val_score(
             estimator, X_train, y_train, scoring=scorer, cv=CV)))
         predict_iter.append(np.mean(cross_val_score(
@@ -503,9 +504,9 @@ if __name__ == '__main__':
 
     mnames = [
         # 'KNN',
-        'DT',
+        # 'DT',
         # 'Boosting',
-        # 'ANN',
+        'ANN',
         # 'SVM_LIN',
         # 'SVM_SIG',
         # 'SVM_PLY',
@@ -518,14 +519,22 @@ if __name__ == '__main__':
         'ANN': 'MLP__max_iter'
     }
 
+    alphas = [10 ** -exp for exp in np.arange(1, 3, 0.5)]
+    d = 250
+    hidden_layer_size = [(h,) * l for l in [1, 2]
+                         for h in [d // 2, d, d * 2]]
+
     # validation curve parameter names and ranges
     vc_params = {
         'KNN': ('KNN__n_neighbors', np.arange(1, 40, 1)),
         'DT': ('DT__max_depth', np.arange(1, 20, 1)),
         # 'DT': ('DT__min_samples_leaf', np.arange(1, 30, 1)),
 
-        'Boosting': ('ADA__learning_rate', np.arange(0.001, 10.0, 0.1)),
-        'ANN': ('MLP__alpha', np.logspace(-10, 4, 20)),
+        'Boosting': ('ADA__learning_rate', np.logspace(-2, 0, 30)),
+        # 'Boosting': ('ADA__n_estimators', [1, 2, 3, 5, 7, 10, 15, 20, 25, 30, 40, 50, 70, 100]),
+        # 'Boosting': ('ADA__n_estimators', np.arange(0.001, 10.0, 0.1)),
+
+        'ANN': ('MLP__alpha', np.logspace(-5, 0, 20)),
         'SVM_LIN': ('SVML__max_iter', np.linspace(1, 40000, 20)),
         'SVM_SIG': ('SVMS__gamma', np.logspace(-9, 1, 15)),
         'SVM_PLY': ('SVMP__degree', np.arange(0.001, 10, 0.5)),
@@ -623,16 +632,16 @@ if __name__ == '__main__':
                     clf_name=clf_name
                 )
 
-            # generate iteration curves for ANN and AdaBoost classifiers
-            if clf_name == 'ANN' or clf_name == 'Boosting':
-                create_iteration_curve(
-                    estimator.best_estimator_,
-                    X_train, X_test, y_train, y_test,
-                    data_name=df_name,
-                    clf_name=clf_name,
-                    param=iterators[clf_name],
-                    scorer=scorer
-                )
+            # # generate iteration curves for ANN and AdaBoost classifiers
+            # if clf_name == 'ANN' or clf_name == 'Boosting':
+            #     create_iteration_curve(
+            #         estimator.best_estimator_,
+            #         X_train, X_test, y_train, y_test,
+            #         data_name=df_name,
+            #         clf_name=clf_name,
+            #         param=iterators[clf_name],
+            #         scorer=scorer
+            #     )
 
             end_time = timeit.default_timer()
             elapsed = end_time - start_time
