@@ -3,28 +3,144 @@
   <component name="ChangeListManager">
     <list default="true" id="5969f81e-9d2b-4e87-9c20-d57521941376" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/KNN/banana_best_estimator.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/KNN/banana_best_estimator.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/banana.csv" beforeDir="false" afterPath="$PROJECT_DIR$/unused_data/banana.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/banknotes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/unused_data/banknotes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ANN/banana_best_estimator.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/ANN/banana_best_estimator.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ANN/banana_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/ANN/banana_cv_results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ANN/banana_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/ANN/banana_grid.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Boosting/banana_best_estimator.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/Boosting/banana_best_estimator.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Boosting/banana_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/Boosting/banana_cv_results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Boosting/banana_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/Boosting/banana_grid.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/DT/banana_best_estimator.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/DT/banana_best_estimator.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/DT/banana_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/DT/banana_cv_results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/DT/banana_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/DT/banana_grid.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/KNN/banana_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/KNN/banana_cv_results.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/KNN/banana_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/KNN/banana_grid.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/KNN/banknotes_best_estimator.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/KNN/banknotes_best_estimator.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/KNN/banknotes_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/KNN/banknotes_cv_results.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/KNN/banknotes_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/KNN/banknotes_grid.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SVM_LIN/banana_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/SVM_LIN/banana_cv_results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SVM_LIN/banana_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/SVM_LIN/banana_grid.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SVM_PLY/banana_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/SVM_PLY/banana_cv_results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SVM_PLY/banana_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/SVM_PLY/banana_grid.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SVM_RBF/banana_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/SVM_RBF/banana_cv_results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SVM_RBF/banana_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/SVM_RBF/banana_grid.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SVM_SIG/banana_cv_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/models/SVM_SIG/banana_cv_results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/SVM_SIG/banana_grid.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/SVM_SIG/banana_grid.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/ANN/banana_DB.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/ANN/banana_DB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/ANN/banana_IC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/ANN/banana_IC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/ANN/banana_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/ANN/banana_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/ANN/banana_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/ANN/banana_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/ANN/banknotes_IC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/ANN/banknotes_IC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/ANN/banknotes_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/ANN/banknotes_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/ANN/banknotes_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/ANN/banknotes_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Boosting/banana_DB.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Boosting/banana_DB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Boosting/banana_IC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Boosting/banana_IC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Boosting/banana_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Boosting/banana_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Boosting/banana_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Boosting/banana_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Boosting/banknotes_IC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Boosting/banknotes_IC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Boosting/banknotes_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Boosting/banknotes_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Boosting/banknotes_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/Boosting/banknotes_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banana_DB.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/DT/banana_DB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banana_DT.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/DT/banana_DT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banana_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/DT/banana_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banana_TC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banana_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/DT/banana_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banknotes_DT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banknotes_LC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banknotes_TC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/DT/banknotes_VC.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plots/KNN/banana_DB.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/KNN/banana_DB.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plots/KNN/banana_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/KNN/banana_LC.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/KNN/banana_TC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/KNN/banana_TC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/KNN/banana_TC.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plots/KNN/banana_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/KNN/banana_VC.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/KNN/banknotes_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/KNN/banknotes_LC.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/KNN/banknotes_TC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/KNN/banknotes_TC.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/KNN/banknotes_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/KNN/banknotes_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/KNN/banknotes_LC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/KNN/banknotes_TC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/KNN/banknotes_VC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_LIN/banana_DB.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_LIN/banana_DB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_LIN/banana_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_LIN/banana_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_LIN/banana_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_LIN/banana_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_LIN/banknotes_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_LIN/banknotes_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_LIN/banknotes_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_LIN/banknotes_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_PLY/banana_DB.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_PLY/banana_DB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_PLY/banana_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_PLY/banana_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_PLY/banana_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_PLY/banana_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_PLY/banknotes_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_PLY/banknotes_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_PLY/banknotes_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_PLY/banknotes_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_RBF/banana_DB.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_RBF/banana_DB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_RBF/banana_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_RBF/banana_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_RBF/banana_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_RBF/banana_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_RBF/banknotes_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_RBF/banknotes_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_RBF/banknotes_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_RBF/banknotes_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_SIG/banana_DB.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_SIG/banana_DB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_SIG/banana_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_SIG/banana_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_SIG/banana_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_SIG/banana_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_SIG/banknotes_LC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_SIG/banknotes_LC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/SVM_SIG/banknotes_VC.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/SVM_SIG/banknotes_VC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banana/class.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banana/histogram_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banana/histogram_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banana/v1-v2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banana/v1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banana/v2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/class.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/curtosis-entropy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/curtosis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/entropy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/histogram_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/histogram_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/skewness-curtosis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/skewness-entropy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/skewness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/varience-curtosis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/varience-entropy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/varience-skewness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/data/banknotes/varience.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ANN/banana_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/ANN/banana_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ANN/banana_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/ANN/banana_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ANN/banana_iterations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/ANN/banana_iterations.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ANN/banknotes_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/ANN/banknotes_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ANN/banknotes_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/ANN/banknotes_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ANN/banknotes_iterations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/ANN/banknotes_iterations.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/Boosting/banana_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Boosting/banana_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/Boosting/banana_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Boosting/banana_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/Boosting/banana_iterations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Boosting/banana_iterations.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/Boosting/banknotes_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Boosting/banknotes_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/Boosting/banknotes_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Boosting/banknotes_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/Boosting/banknotes_iterations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Boosting/banknotes_iterations.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/DT/banana_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/DT/banana_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/DT/banana_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/DT/banana_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/DT/banana_timing_curve.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/DT/banana_timing_curve.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/DT/banknotes_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/DT/banknotes_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/DT/banknotes_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/DT/banknotes_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/DT/banknotes_timing_curve.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/DT/banknotes_timing_curve.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/KNN/banana_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/KNN/banana_LC_test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/KNN/banana_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/KNN/banana_LC_train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/KNN/banana_timing_curve.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/KNN/banana_timing_curve.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/KNN/banknotes_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/KNN/banknotes_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/KNN/banknotes_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/KNN/banknotes_LC_train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/KNN/banknotes_timing_curve.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/KNN/banknotes_timing_curve.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_LIN/banana_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_LIN/banana_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_LIN/banana_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_LIN/banana_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_LIN/banknotes_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_LIN/banknotes_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_LIN/banknotes_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_LIN/banknotes_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_PLY/banana_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_PLY/banana_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_PLY/banana_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_PLY/banana_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_PLY/banknotes_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_PLY/banknotes_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_PLY/banknotes_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_PLY/banknotes_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_RBF/banana_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_RBF/banana_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_RBF/banana_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_RBF/banana_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_RBF/banknotes_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_RBF/banknotes_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_RBF/banknotes_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_RBF/banknotes_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_SIG/banana_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_SIG/banana_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_SIG/banana_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_SIG/banana_LC_train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_SIG/banknotes_LC_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_SIG/banknotes_LC_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/SVM_SIG/banknotes_LC_train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/SVM_SIG/banknotes_LC_train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/combined_results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results/combined_results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clf_decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/clf_decision_tree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clf_knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/clf_knn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model_evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/model_evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/model_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualize_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualize_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +149,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ml_7641_v2$model_train.coverage" NAME="model_train Coverage Results" MODIFIED="1549310079804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ml_7641_v2$model_train.coverage" NAME="model_train Coverage Results" MODIFIED="1549436382211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/ml_7641_v2$visualize_data_triplets.coverage" NAME="visualize_data_triplets Coverage Results" MODIFIED="1549397655427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/ml_7641_v2$raw_data_download.coverage" NAME="raw_data_download Coverage Results" MODIFIED="1549157212046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/ml_7641_v2$scratch_13.coverage" NAME="scratch_13 Coverage Results" MODIFIED="1549346019833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
@@ -44,7 +160,7 @@
     <SUITE FILE_PATH="coverage/ml_7641_v2$scratch_12.coverage" NAME="scratch_12 Coverage Results" MODIFIED="1549177513690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/ml_7641_v2$dt_maker.coverage" NAME="dt_maker Coverage Results" MODIFIED="1549309219402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/ml_7641_v2$process_data.coverage" NAME="process_data Coverage Results" MODIFIED="1549167390639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/ml_7641_v2$model_evaluation.coverage" NAME="model_evaluation Coverage Results" MODIFIED="1549317226245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ml_7641_v2$model_evaluation.coverage" NAME="model_evaluation Coverage Results" MODIFIED="1549606302067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-876235757">
@@ -57,19 +173,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="16" />
+          <entry key="csv" value="34" />
           <entry key="gitignore" value="2" />
-          <entry key="png" value="52" />
-          <entry key="py" value="90" />
+          <entry key="png" value="53" />
+          <entry key="py" value="117" />
           <entry key="test" value="1" />
-          <entry key="txt" value="9" />
+          <entry key="txt" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="52" />
-          <entry key="PLAIN_TEXT" value="28" />
-          <entry key="Python" value="88" />
+          <entry key="Image" value="53" />
+          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="Python" value="115" />
           <entry key="Scratch" value="2" />
         </counts>
       </usages-collector>
@@ -78,14 +194,14 @@
           <entry key="csv" value="33" />
           <entry key="dummy" value="19" />
           <entry key="gitignore" value="19" />
-          <entry key="py" value="4232" />
-          <entry key="txt" value="61" />
+          <entry key="py" value="5558" />
+          <entry key="txt" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="132" />
-          <entry key="Python" value="4144" />
+          <entry key="PLAIN_TEXT" value="201" />
+          <entry key="Python" value="5470" />
           <entry key="Scratch" value="88" />
         </counts>
       </usages-collector>
@@ -93,11 +209,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model_evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5970">
-              <caret line="398" lean-forward="true" selection-start-line="398" selection-end-line="398" />
+            <state relative-caret-position="468">
+              <caret line="523" column="47" selection-start-line="523" selection-start-column="47" selection-end-line="523" selection-end-column="47" />
               <folding>
                 <element signature="e#137#156#0" expanded="true" />
               </folding>
@@ -105,56 +221,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/clf_knn.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model_train.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
-              <folding>
-                <element signature="e#161#227#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/neighbors/classification.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="128" column="21" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/neighbors/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="176" column="26" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="37" />
-              <caret line="182" column="41" selection-start-line="182" selection-start-column="41" selection-end-line="182" selection-end-column="52" />
-              <caret line="184" column="41" selection-start-line="184" selection-start-column="41" selection-end-line="184" selection-end-column="52" />
-              <caret line="186" column="41" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/results/combined_results.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="103" lean-forward="true" selection-end-column="103" />
+            <state relative-caret-position="480">
+              <caret line="299" selection-start-line="299" selection-end-line="299" />
             </state>
           </provider>
         </entry>
@@ -170,36 +241,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>np.mean(</find>
-      <find>cross-validation score</find>
-      <find>fill_between</find>
-      <find>decision_tree</find>
-      <find>svm</find>
-      <find>cv=4</find>
-      <find>leaf_size</find>
-      <find>che</find>
-      <find>eucl</find>
-      <find>weights</find>
-      <find>banana.*KNN__n_neighbors':</find>
-      <find>c</find>
-      <find>cv=</find>
-      <find>i + j</find>
-      <find>leaf_</find>
-      <find>banana|0.9009375407815465|0.9010940331136525|make_scorer(balanced_accuracy)|{'KNN__leaf_size': 1, 'KNN__metric': 'manhattan', 'KNN__n_neighbors': shuffle</find>
-      <find>shuffle</find>
-      <find>filename</find>
-      <find>tmit</find>
-      <find>KNN__leaf_size</find>
-      <find>timing</find>
-      <find>combined</find>
-      <find>leaf</find>
-      <find>brute</find>
-      <find>manhattan</find>
-      <find>metric</find>
-      <find>minkowski</find>
-      <find>manhatt</find>
+      <find>learning_c</find>
+      <find>train_si</find>
+      <find>mean_sq</find>
+      <find>train_sizes</find>
+      <find>max_leaf_nodes</find>
+      <find>DT|banknotes.*'DT__max_depth</find>
+      <find>prune</find>
+      <find>prun</find>
+      <find>decision</find>
       <find>knn</find>
-      <find>dname</find>
+      <find>'DT__max_depth':</find>
+      <find>.groupby</find>
+      <find>{}|{}</find>
+      <find>best_estimator_</find>
+      <find>estimators</find>
+      <find>banana|</find>
+      <find>ANN|banana|</find>
+      <find>ax</find>
+      <find>validation</find>
+      <find>print(</find>
+      <find>validation_curv</find>
+      <find>timing_c</find>
+      <find>create_learning_curve</find>
+      <find>CV=</find>
+      <find>CV={}</find>
+      <find>cross-valid</find>
+      <find>Score</find>
+      <find>Validation curve wi</find>
+      <find>0.0,</find>
+      <find>KNN</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -214,14 +285,11 @@
         <option value="$PROJECT_DIR$/src/data_download.py" />
         <option value="$PROJECT_DIR$/data/abalone.csv" />
         <option value="$PROJECT_DIR$/src/raw_data_download.py" />
-        <option value="$PROJECT_DIR$/src/process_data.py" />
-        <option value="$PROJECT_DIR$/src/clf_decision_tree.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_12.py" />
         <option value="$PROJECT_DIR$/src/helpers.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/data/banana.csv" />
         <option value="$PROJECT_DIR$/src/visualize_data_all.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/src/test_model_eval.py" />
         <option value="$PROJECT_DIR$/src/dt_maker.py" />
         <option value="$PROJECT_DIR$/src/model_train_test.py" />
@@ -230,11 +298,16 @@
         <option value="$PROJECT_DIR$/src/visualize_data_pairs.py" />
         <option value="$PROJECT_DIR$/src/visualize_data_triplets.py" />
         <option value="$PROJECT_DIR$/src/visualize_data_per.py" />
-        <option value="$PROJECT_DIR$/src/visualize_data.py" />
-        <option value="$PROJECT_DIR$/results/combined_results.txt" />
+        <option value="$PROJECT_DIR$/src/model_comparison.py" />
         <option value="$PROJECT_DIR$/src/clf_knn.py" />
+        <option value="$PROJECT_DIR$/src/clf_decision_tree.py" />
         <option value="$PROJECT_DIR$/src/model_train.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/src/visualize_data.py" />
+        <option value="$PROJECT_DIR$/src/process_data.py" />
+        <option value="$PROJECT_DIR$/results/time_results.txt" />
         <option value="$PROJECT_DIR$/src/model_evaluation.py" />
+        <option value="$PROJECT_DIR$/results/combined_results.txt" />
       </list>
     </option>
   </component>
@@ -277,6 +350,11 @@
             <path>
               <item name="ml.7641.v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="ml.7641.v2" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ml.7641.v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ml.7641.v2" type="462c0819:PsiDirectoryNode" />
               <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -306,8 +384,8 @@
       <recent name="$PROJECT_DIR$/unused_data" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -322,7 +400,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.visualize_data">
+  <component name="RunManager" selected="Python.model_evaluation">
     <configuration name="model_evaluation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ml.7641.v2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -345,7 +423,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch_13" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="model_train" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ml.7641.v2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -353,12 +431,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_13.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/model_train.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -435,18 +513,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.model_evaluation" />
-      <item itemvalue="Python.scratch_13" />
       <item itemvalue="Python.visualize_data_pairs" />
       <item itemvalue="Python.visualize_data_triplets" />
       <item itemvalue="Python.visualize_data" />
+      <item itemvalue="Python.model_train" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.model_evaluation" />
+        <item itemvalue="Python.model_train" />
         <item itemvalue="Python.visualize_data" />
         <item itemvalue="Python.visualize_data_triplets" />
         <item itemvalue="Python.visualize_data_pairs" />
-        <item itemvalue="Python.scratch_13" />
-        <item itemvalue="Python.model_evaluation" />
       </list>
     </recent_temporary>
   </component>
@@ -472,8 +550,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29897958" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29897958" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -509,6 +587,11 @@
           <line>186</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/model_evaluation.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -527,171 +610,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1549230842324" expanded="true" signature="1890:1891" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/pydotplus/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/mlxtend/utils/checking.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/DT/abalone_DT.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/utils/validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="950" selection-start-line="950" selection-end-line="950" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test_model_eval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="356" selection-start-line="356" selection-end-line="369" selection-end-column="17" />
-          <folding>
-            <element signature="e#137#156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dt_maker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="353" column="19" selection-start-line="353" selection-start-column="4" selection-end-line="353" selection-end-column="19" />
-          <folding>
-            <element signature="e#137#156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model_train_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="176" column="9" selection-start-line="176" selection-start-column="9" selection-end-line="176" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/svm/classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="686" column="12" selection-start-line="686" selection-start-column="4" selection-end-line="686" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/numpy/core/function_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="44" column="29" lean-forward="true" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clf_svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/ANN/abalone_VC.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/banknotes.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/neural_network/multilayer_perceptron.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="681" column="6" selection-start-line="681" selection-start-column="6" selection-end-line="681" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clf_neural_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/model_selection/_validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="231" column="55" lean-forward="true" selection-start-line="231" selection-start-column="55" selection-end-line="231" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unused_data/bike_sharing_day.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="720" column="57" lean-forward="true" selection-start-line="720" selection-start-column="57" selection-end-line="720" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unused_data/bike_sharing_day.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unused_data/contraceptive.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="681" column="20" selection-start-line="681" selection-start-column="20" selection-end-line="681" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clf_decision_tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/model_selection/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_13.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plots/data/banana/v2v2.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -768,17 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visualize_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1549401468854" expanded="true" signature="942:3274" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results/KNN/banana_LC_test.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -791,13 +698,6 @@
     <entry file="file://$PROJECT_DIR$/results/KNN/banknotes_timing_curve.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/neighbors/classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="128" column="21" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/neighbors/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
@@ -808,40 +708,223 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/combined_results.txt">
+    <entry file="file://$PROJECT_DIR$/src/model_comparison.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="103" lean-forward="true" selection-end-column="103" />
+        <state relative-caret-position="200">
+          <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+          <folding>
+            <element signature="e#137#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/neighbors/classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="216" column="28" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clf_knn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state relative-caret-position="315">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="38" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/model_selection/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="41" />
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/metrics/scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused_data/banknotes.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="1366" column="34" lean-forward="true" selection-start-line="1366" selection-start-column="34" selection-end-line="1366" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused_data/banana.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="5300" column="15" lean-forward="true" selection-start-line="5300" selection-start-column="15" selection-end-line="5300" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/tree/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1460" column="10" selection-start-line="1460" selection-start-column="6" selection-end-line="1460" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused_data/abalone.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused_data/diabetes.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="204" column="29" lean-forward="true" selection-start-line="204" selection-start-column="29" selection-end-line="204" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused_data/contraceptive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10215">
+          <caret line="681" column="20" selection-start-line="681" selection-start-column="20" selection-end-line="681" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused_data/bike_sharing_day.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="46" lean-forward="true" selection-end-line="731" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clf_decision_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused_data/abalone.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unused_data/bike_sharing_day.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/raw_data_download.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/pandas/core/dtypes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/process_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="95" column="69" selection-start-line="95" selection-start-column="69" selection-end-line="95" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/time_results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="181" column="37" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/visualize_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="99" selection-start-line="95" selection-start-column="4" selection-end-line="99" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1549603392111" expanded="true" signature="937:4228" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testing.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="1071">
+          <caret line="169" column="12" selection-start-line="169" selection-start-column="9" selection-end-line="169" selection-end-column="12" />
           <folding>
             <element signature="e#161#227#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file:///anaconda3/envs/py37/lib/python3.7/site-packages/sklearn/model_selection/_validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="1335" column="4" selection-start-line="1335" selection-start-column="4" selection-end-line="1335" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/banana.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78724">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/contraceptive.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21664" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model_evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5970">
-          <caret line="398" lean-forward="true" selection-start-line="398" selection-end-line="398" />
+        <state relative-caret-position="468">
+          <caret line="523" column="47" selection-start-line="523" selection-start-column="47" selection-end-line="523" selection-end-column="47" />
           <folding>
             <element signature="e#137#156#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/combined_results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="299" selection-start-line="299" selection-end-line="299" />
         </state>
       </provider>
     </entry>

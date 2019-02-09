@@ -28,6 +28,8 @@ from IPython.display import Image
 from sklearn.tree import export_graphviz
 import pydotplus
 
+CV = 7
+
 
 def basic_results(grid, X_test, y_test, data_name, clf_name):
     """Gets best fit against test data for best estimator from a particular grid object.
@@ -42,10 +44,13 @@ def basic_results(grid, X_test, y_test, data_name, clf_name):
 
     """
     # get best score, test score, scoring function and best parameters
+    start_time = timeit.default_timer()
     bs = grid.best_score_
     ts = grid.score(X_test, y_test)
     sf = grid.scorer_
     bp = grid.best_params_
+    end_time = timeit.default_timer()
+    elapsed = end_time - start_time
 
     # write results to a combined results file
     parentdir = 'results'
@@ -53,13 +58,78 @@ def basic_results(grid, X_test, y_test, data_name, clf_name):
 
     # append grid score data to combined results csv
     with open(resfile, 'a') as f:
-        f.write('{}|{}|{}|{}|{}|{}\n'.format(clf_name, data_name, bs, ts, sf, bp))
+        f.write('{}|{}|{}|{}|{}|{}|{}\n'.format(clf_name, data_name, bs, ts, sf, elapsed, bp))
+
+
+def get_train_v_predict_times(
+        grid,
+        dataset,
+        data_name,
+        clf_name
+):
+    # write results to a combined results file
+    parentdir = 'results'
+    resfile = get_abspath('time_results.txt', parentdir)
+
+    estimator = grid.best_estimator_
+    best_score = grid.best_score_
+
+    X_train, X_test, y_train, y_test = split_data(
+        dataset, test_size=0.5
+    )
+    start_train = timeit.default_timer()
+    for _ in range(10):
+        estimator.fit(X_train, y_train)
+
+    end_train = timeit.default_timer()
+    for _ in range(10):
+        estimator.predict(X_test)
+
+    end_predict = timeit.default_timer()
+
+    train_time = end_train - start_train
+    predict_time = end_predict - end_train
+
+    # with open(resfile, 'a') as f:
+    #     f.write('{}|{}|{}|{}|{}\n'.format(clf_name, data_name, best_score, train_time, predict_time))
+
+    return best_score, train_time, predict_time
+
+
+def create_accuracy_train_predict_bars(
+        estimators,
+        dataset,
+        data_name
+):
+    parentdir = 'results'
+    resfile = get_abspath('time_results.txt', parentdir)
+    data = []
+    with open(resfile, 'a') as f:
+        # generate validation, learning, and timing curves
+        for clf_name, estimator in estimators.items():
+            if estimator is None:
+                continue
+
+            best_score, train_time, predict_time = get_train_v_predict_times(
+                estimator, dataset, data_name, clf_name)
+            data.append([clf_name, best_score, train_time, predict_time])
+            f.write('{}|{}|{}|{}|{}\n'.format(clf_name,
+                                              data_name,
+                                              best_score,
+                                              train_time,
+                                              predict_time))
+
+    # df = pd.DataFrame(data,)
+    # df.plot(kind='bar', stacked=False)
+    #
+    # plt.savefig("testing")
+    # plt.close()
 
 
 def create_learning_curve(
         estimator,
         scorer, X_train, y_train, data_name,
-        clf_name, cv=5
+        clf_name, cv=CV
 ):
     """Generates a learning curve for the specified estimator, saves tabular
     results to CSV and saves a plot of the learning curve.
@@ -75,7 +145,7 @@ def create_learning_curve(
 
     """
     # set training sizes and intervals
-    train_sizes = np.arange(0.1, 1.0, 0.05)
+    train_sizes = np.arange(0.1, 1.0, 0.025)
 
     # set cross validation strategy to use StratifiedShuffleSplit
     cv_strategy = StratifiedShuffleSplit(n_splits=cv, random_state=0)
@@ -89,6 +159,7 @@ def create_learning_curve(
     test_scores = pd.DataFrame(index=LC[0], data=LC[2])
 
     train_scores_mean = np.mean(train_scores, axis=1)
+    train_scores_std = np.std(train_scores, axis=1)
     test_scores_mean = np.mean(test_scores, axis=1)
     test_scores_std = np.std(test_scores, axis=1)
 
@@ -103,9 +174,15 @@ def create_learning_curve(
     # create learning curve plot
     plt.figure(1)
     plt.plot(train_sizes, 1 - train_scores_mean,
-             marker='.', color='b', label='Training score')
+             marker='.', color='b', label='Train')
     plt.plot(train_sizes, 1 - test_scores_mean,
-             marker='.', color='g', label='Cross-validation score')
+             marker='.', color='g', label='Test')
+
+    # plot upper and lower bound filler
+    plt.fill_between(train_sizes,
+                     1 - train_scores_mean - train_scores_std,
+                     1 - train_scores_mean + train_scores_std,
+                     alpha=0.2, color="b")
 
     # plot upper and lower bound filler
     plt.fill_between(train_sizes,
@@ -116,10 +193,10 @@ def create_learning_curve(
     plt.legend(loc='best')
     plt.grid(linestyle='dotted')
     plt.xlabel('Samples used for training as a percentage of total')
-    plt.ylabel('Balanced Error')
+    plt.ylabel('Balanced Cost (1 - Score)')
     # plt.ylim((0, 1.1))
 
-    plt.title("Learning with {} on {}".format(clf_name, data_name))
+    plt.title("Learning Curve with {} on {}. (CV={})".format(clf_name, data_name.capitalize(), CV))
 
     # save learning curve plot as PNG
     plotdir = 'plots'
@@ -188,7 +265,7 @@ def create_timing_curve(
 
     # save timing curve plot as PNG
     plotdir = 'plots'
-    plt.title("Timing Curve with {} on {}".format(clf_name, data_name))
+    plt.title("Timing Curve with {} on {}".format(clf_name, data_name.capitalize()))
     plot_tgt = '{}/{}'.format(plotdir, clf_name)
     plotpath = get_abspath('{}_TC.png'.format(data_name), plot_tgt)
     plt.savefig(plotpath)
@@ -226,9 +303,9 @@ def create_iteration_curve(
         estimator.set_params(**{param: iteration})
         estimator.fit(X_train, y_train)
         train_iter.append(np.mean(cross_val_score(
-            estimator, X_train, y_train, scoring=scorer, cv=5)))
+            estimator, X_train, y_train, scoring=scorer, cv=CV)))
         predict_iter.append(np.mean(cross_val_score(
-            estimator, X_test, y_test, scoring=scorer, cv=5)))
+            estimator, X_test, y_test, scoring=scorer, cv=CV)))
         final_df.append([iteration, train_iter[i], predict_iter[i]])
 
     # save iteration results to CSV
@@ -245,13 +322,14 @@ def create_iteration_curve(
              color='b', label='Train Score')
     plt.plot(iterations, predict_iter, marker='.',
              color='g', label='Test Score')
+
     plt.legend(loc='best')
     plt.grid(linestyle='dotted')
     plt.xlabel('Number of iterations')
-    plt.ylabel('Balanced Accuracy')
+    plt.ylabel('Balanced Accuracy (CV={})'.format(CV))
     # plt.ylim((0, 1.1))
 
-    plt.title("Interation with {} on {}".format(clf_name, data_name))
+    plt.title("Iteration with {} on {}".format(clf_name, data_name.capitalize()))
     # save iteration curve plot as PNG
     plotdir = 'plots'
     plot_tgt = '{}/{}'.format(plotdir, clf_name)
@@ -283,37 +361,46 @@ def create_validation_curve(
     train_scores, test_scores = validation_curve(
         estimator, X_train, y_train,
         param_name=param_name, param_range=param_range,
-        cv=5, scoring=scorer, n_jobs=1
+        cv=CV, scoring=scorer, n_jobs=1
     )
 
     train_scores_mean = np.mean(train_scores, axis=1)
+    train_scores_std = np.std(train_scores, axis=1)
     test_scores_mean = np.mean(test_scores, axis=1)
     test_scores_std = np.std(test_scores, axis=1)
 
     # generate validation curve plot
     plt.figure(4)
-    if param_name is 'SVMR__gamma' or param_name is 'MLP__alpha' or param_name is 'SVMS__gamma':
-        plt.semilogx(param_range, 1 - train_scores_mean,
-                     marker='.', color='b', label='Train Score')
-        plt.semilogx(param_range, 1 - test_scores_mean,
-                     marker='.', color='g', label='Cross-validation Score')
+    if param_name is 'SVMR__gamma' or \
+            param_name is 'MLP__alpha' or \
+            param_name is 'SVMS__gamma':
+
+        plt.semilogx(param_range, train_scores_mean,
+                     marker='.', color='b', label='Train')
+        plt.semilogx(param_range, test_scores_mean,
+                     marker='.', color='g', label='Test')
     else:
-        plt.plot(param_range, 1 - train_scores_mean,
-                 marker='.', color='b', label='Train Score')
-        plt.plot(param_range, 1 - test_scores_mean,
-                 marker='.', color='g', label='Cross-validation Score')
+        plt.plot(param_range, train_scores_mean,
+                 marker='.', color='b', label='Train')
+        plt.plot(param_range, test_scores_mean,
+                 marker='.', color='g', label='Test')
 
     # plot upper and lower bound filler
     plt.fill_between(param_range,
-                     1 - test_scores_mean - test_scores_std,
-                     1 - test_scores_mean + test_scores_std,
+                     train_scores_mean - train_scores_std,
+                     train_scores_mean + train_scores_std,
+                     alpha=0.2, color="b")
+
+    plt.fill_between(param_range,
+                     test_scores_mean - test_scores_std,
+                     test_scores_mean + test_scores_std,
                      alpha=0.2, color="g")
 
     plt.legend(loc='best')
-    plt.title("Validation Curve with {} on {}".format(clf_name, data_name))
+    plt.title("Validation Curve with {} on {} (CV={})".format(clf_name, data_name.capitalize(), CV))
     plt.grid(linestyle='dotted')
     plt.xlabel(param_name)
-    plt.ylabel('Balanced Error')
+    plt.ylabel('Balanced Accuracy')
     # plt.ylim((0, 1.1))
 
     # save iteration curve plot as PNG
@@ -347,7 +434,7 @@ def create_decision_boundary(X, y, clf, data_name, clf_name):
     plt.xlabel(cols[0])
     plt.ylabel(cols[1])
     plt.grid(linestyle='dotted')
-    plt.title("Decision Boundary with {} on {}".format(clf_name, data_name))
+    plt.title("Decision Boundary with {} on {}".format(clf_name, data_name.capitalize()))
 
     # save iteration curve plot as PNG
     plotdir = 'plots'
@@ -415,14 +502,14 @@ if __name__ == '__main__':
     }
 
     mnames = [
-        'KNN',
+        # 'KNN',
         'DT',
-        'Boosting',
-        'ANN',
-        'SVM_LIN',
-        'SVM_SIG',
-        'SVM_PLY',
-        'SVM_RBF',
+        # 'Boosting',
+        # 'ANN',
+        # 'SVM_LIN',
+        # 'SVM_SIG',
+        # 'SVM_PLY',
+        # 'SVM_RBF',
     ]
 
     # estimators with iteration param
@@ -433,8 +520,10 @@ if __name__ == '__main__':
 
     # validation curve parameter names and ranges
     vc_params = {
-        'KNN': ('KNN__n_neighbors', np.arange(1, 30, 1)),
-        'DT': ('DT__max_depth', np.arange(1, 50, 1)),
+        'KNN': ('KNN__n_neighbors', np.arange(1, 40, 1)),
+        'DT': ('DT__max_depth', np.arange(1, 20, 1)),
+        # 'DT': ('DT__min_samples_leaf', np.arange(1, 30, 1)),
+
         'Boosting': ('ADA__learning_rate', np.arange(0.001, 10.0, 0.1)),
         'ANN': ('MLP__alpha', np.logspace(-10, 4, 20)),
         'SVM_LIN': ('SVML__max_iter', np.linspace(1, 40000, 20)),
@@ -460,6 +549,12 @@ if __name__ == '__main__':
             except IOError:
                 pass
 
+        create_accuracy_train_predict_bars(
+            estimators,
+            dataset=df.copy(deep=True),
+            data_name=df_name,
+        )
+
         # generate validation, learning, and timing curves
         for clf_name, estimator in estimators.items():
             if estimator is None:
@@ -475,16 +570,27 @@ if __name__ == '__main__':
                 clf_name=clf_name
             )
 
+            LC_X_data = df.drop('class', axis=1)
+            LC_y_data = df['class']
+
             create_learning_curve(
                 estimator.best_estimator_,
                 scorer,
-                X_train, y_train,
+                LC_X_data, LC_y_data,
+                # X_train, y_train,
                 data_name=df_name,
                 clf_name=clf_name
             )
 
-            create_timing_curve(
-                estimator.best_estimator_,
+            # create_timing_curve(
+            #     estimator.best_estimator_,
+            #     dataset=df.copy(deep=True),
+            #     data_name=df_name,
+            #     clf_name=clf_name
+            # )
+
+            get_train_v_predict_times(
+                estimator,
                 dataset=df.copy(deep=True),
                 data_name=df_name,
                 clf_name=clf_name

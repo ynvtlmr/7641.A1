@@ -16,9 +16,9 @@ class KNN(object):
             [('Scale', StandardScaler()), ('KNN', KNeighborsClassifier())])
 
         # set up parameter grid for parameters to search over
-        self.params = {'KNN__metric': ['minkowski', 'manhattan', 'euclidean', 'chebyshev'],
+        self.params = {'KNN__metric': ['manhattan', 'minkowski', 'euclidean', 'chebyshev'],
                        'KNN__n_neighbors': np.arange(1, 30, 2),
                        'KNN__weights': ['uniform', 'distance'],
-                       'KNN__leaf_size': [1, 3, 10, 30],
-                       'KNN__algorithm': ['ball_tree', 'kd_tree', 'brute'],
+                       'KNN__leaf_size': [1],  # , 3, 10, 30, 100
+                       'KNN__algorithm': ['ball_tree'],  # , 'kd_tree', 'brute'
                        }
