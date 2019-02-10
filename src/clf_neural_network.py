@@ -15,18 +15,18 @@ class MLP(object):
         # unit variance
         self.pipeline = Pipeline([
             ('Scale', StandardScaler()),
-            ('MLP', MLPClassifier(max_iter=4000, early_stopping=True))
+            ('MLP', MLPClassifier(max_iter=100, early_stopping=False))
         ])
 
         # set up parameter grid for parameters to search over
-        alphas = [10 ** -exp for exp in np.arange(-3, 3, 0.5)]
-        d = 250
+        alphas = [10 ** -exp for exp in np.arange(0.5, 3, 0.25)]
+        d = 25
         hidden_layer_size = [(h,) * l for l in [1, 2]
                              for h in [d // 2, d, d * 2]]
 
-        self.params = {'MLP__activation': ['logistic', 'relu'],
+        self.params = {'MLP__activation': ['relu'],  # 'logistic',
                        'MLP__alpha': alphas,
                        'MLP__solver': ['adam'],
                        'MLP__hidden_layer_sizes': hidden_layer_size,
-                       'MLP__learning_rate': ['adaptive']
+                       'MLP__learning_rate': ['constant']
                        }

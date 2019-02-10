@@ -358,6 +358,9 @@ def create_validation_curve(
         scorer (function): Scoring function.
 
     """
+
+    param_range = np.array(param_range)
+
     # generate validation curve results
     train_scores, test_scores = validation_curve(
         estimator, X_train, y_train,
@@ -374,7 +377,9 @@ def create_validation_curve(
     plt.figure(4)
     if param_name is 'SVMR__gamma' or \
             param_name is 'MLP__alpha' or \
-            param_name is 'SVMS__gamma':
+            param_name is 'SVMS__gamma' or \
+            param_name is 'MLP__hidden_layer_sizes' or \
+            param_name is 'SVMR__C':
 
         plt.semilogx(param_range, train_scores_mean,
                      marker='.', color='b', label='Train')
@@ -506,11 +511,11 @@ if __name__ == '__main__':
         # 'KNN',
         # 'DT',
         # 'Boosting',
-        'ANN',
+        # 'ANN',
         # 'SVM_LIN',
         # 'SVM_SIG',
         # 'SVM_PLY',
-        # 'SVM_RBF',
+        'SVM_RBF',
     ]
 
     # estimators with iteration param
@@ -521,8 +526,8 @@ if __name__ == '__main__':
 
     alphas = [10 ** -exp for exp in np.arange(1, 3, 0.5)]
     d = 250
-    hidden_layer_size = [(h,) * l for l in [1, 2]
-                         for h in [d // 2, d, d * 2]]
+    hidden_layer_size = list([(h,) * l for l in [1, 2]
+                              for h in [d // 2, d, d * 2]])
 
     # validation curve parameter names and ranges
     vc_params = {
@@ -534,11 +539,14 @@ if __name__ == '__main__':
         # 'Boosting': ('ADA__n_estimators', [1, 2, 3, 5, 7, 10, 15, 20, 25, 30, 40, 50, 70, 100]),
         # 'Boosting': ('ADA__n_estimators', np.arange(0.001, 10.0, 0.1)),
 
+        # 'ANN': ('MLP__hidden_layer_sizes', hidden_layer_size),
         'ANN': ('MLP__alpha', np.logspace(-5, 0, 20)),
+
         'SVM_LIN': ('SVML__max_iter', np.linspace(1, 40000, 20)),
         'SVM_SIG': ('SVMS__gamma', np.logspace(-9, 1, 15)),
         'SVM_PLY': ('SVMP__degree', np.arange(0.001, 10, 0.5)),
-        'SVM_RBF': ('SVMR__gamma', np.logspace(-9, 1, 15)),
+        # 'SVM_RBF': ('SVMR__gamma', np.logspace(-5, 4, 15)),
+        'SVM_RBF': ('SVMR__C', np.logspace(-3, 10, 26)),
     }
 
     # start model evaluation loop
