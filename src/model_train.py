@@ -167,14 +167,14 @@ if __name__ == '__main__':
 
     # instantiate estimators
     estimators = {
-        # 'KNN': KNN,
-        # 'DT': DT,
-        # 'Boosting': ADA,
+        'KNN': KNN,
+        'DT': DT,
+        'Boosting': ADA,
         'ANN': MLP,
-        # 'SVM_LIN': SVM_LIN,
-        # 'SVM_SIG': SVM_SIG,
-        # 'SVM_PLY': SVM_PLY,
-        # 'SVM_RBF': SVM_RBF,
+        'SVM_LIN': SVM_LIN,
+        'SVM_SIG': SVM_SIG,
+        'SVM_PLY': SVM_PLY,
+        'SVM_RBF': SVM_RBF,
     }
 
     # begin training loop

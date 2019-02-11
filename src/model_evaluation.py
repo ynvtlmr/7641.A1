@@ -508,13 +508,13 @@ if __name__ == '__main__':
     }
 
     mnames = [
-        # 'KNN',
-        # 'DT',
-        # 'Boosting',
-        # 'ANN',
-        # 'SVM_LIN',
-        # 'SVM_SIG',
-        # 'SVM_PLY',
+        'KNN',
+        'DT',
+        'Boosting',
+        'ANN',
+        'SVM_LIN',
+        'SVM_SIG',
+        'SVM_PLY',
         'SVM_RBF',
     ]
 
@@ -640,16 +640,16 @@ if __name__ == '__main__':
                     clf_name=clf_name
                 )
 
-            # # generate iteration curves for ANN and AdaBoost classifiers
-            # if clf_name == 'ANN' or clf_name == 'Boosting':
-            #     create_iteration_curve(
-            #         estimator.best_estimator_,
-            #         X_train, X_test, y_train, y_test,
-            #         data_name=df_name,
-            #         clf_name=clf_name,
-            #         param=iterators[clf_name],
-            #         scorer=scorer
-            #     )
+            # generate iteration curves for ANN and AdaBoost classifiers
+            if clf_name == 'ANN' or clf_name == 'Boosting':
+                create_iteration_curve(
+                    estimator.best_estimator_,
+                    X_train, X_test, y_train, y_test,
+                    data_name=df_name,
+                    clf_name=clf_name,
+                    param=iterators[clf_name],
+                    scorer=scorer
+                )
 
             end_time = timeit.default_timer()
             elapsed = end_time - start_time
